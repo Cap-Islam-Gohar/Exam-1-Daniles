@@ -1,58 +1,24 @@
 
-const typed = {
-    play: false,
-    index: 0,
-    targetEl: document.getElementById("typed"),
-    TypedArray: [],
-    time: 3000,
-    get textArray() {
-        return Array.isArray(this.TypedArray) && this.TypedArray != 0 ? this.TypedArray : this.targetEl.dataset.text.split(",");
-    },
-    when: function (consdition) {
-        this.play = Boolean(consdition);
-        return this;
-    },
-    run: function () {
 
-        this.targetEl.classList.add("typed-wrapper")
-        this.targetEl.style.animationDuration = `${this.time}ms`;
-        
-        const el = document.createElement("span");
-        const cursor = document.createElement("span");
-        cursor.classList.add("typed-cursor")
-        el.classList.add("typed-text");
-        
-        this.targetEl.appendChild(el)
-        this.targetEl.appendChild(cursor)
+/**
+ * progress bar
+ * =======================
+ */
 
-        this.loop()
-        
-    },
-    loop: function () {
+const progress = new progressAnimation({
+    selector: ".skills",
+    duration: 1000,
+}).run();
 
-        this.targetEl.childNodes[0].innerHTML = this.textArray[this.index]
-
-        if (this.play) {
-            
-            var timeout = setTimeout(() => {
-                this.index++
-                if (this.textArray.length <= this.index) {
-                    this.index = 0
-                }
-                this.loop()
-            }, this.time) 
-            
-        } else {
-            clearTimeout(this.timeout)
-        }
-    }
-}
-
+/** loop throw each section and detect if in Viewport */
 const navBarHighlightObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
+            
+            /** Run navBar Funcation */
             navBarHighlightHandler(entry)
 
+            /** If Hero Section in Viewport Run Typed script */
             typed.when(
                 entry.target.id === "hero"
             ).run()
@@ -63,37 +29,47 @@ const navBarHighlightObserver = new IntersectionObserver((entries) => {
 });
 
 
-const navBarHighlightHandler = (entry) => { 
+const navBarHighlightHandler = (entry) => {
 
     const navBar = document.getElementById("navbar")
     const navLinks = document.querySelectorAll("#navbar-list a")
     
-    navBar.classList.add("scrolled-navbar")
+
+    /** Active Scroll-bar anyway */
+    navBar.classList.add("scrolled-navbar")    
     if (entry.target.id === "hero") {
+        /** if Hero Section in Viewport deactive scroll-bar*/
         navBar.classList.remove("scrolled-navbar")
     }
     
+    /**
+     * remove active class for each nav Link any way 
+     * and add it to this link that refernce to current viewport section  
+     * */
     navLinks.forEach(el => {
         el.classList.remove("active")
         if (el.hash.slice(1) === entry.target.id) {
             el.classList.add("active")
-        }    
+        }
     });
 }
 
 
-document.querySelectorAll("#navbar-list a").forEach(el => {  
+document.querySelectorAll("#navbar-list a").forEach(el => {
 
+    /** get target section with link hash */
     const section = document.getElementById(
         el.hash.slice(1)
-    )    
+    )
 
+    /** observe current section in loop */
     navBarHighlightObserver.observe(section)
 
+    /** add click event to links to scroll this target section  */
     el.addEventListener('click', function (e) {
-        e.preventDefault()        
+        e.preventDefault()
         el.style.scrollMarginTop = 62 + "px";
-        document.getElementById(el.hash.slice(1)).scrollIntoView();
+        document.getElementById(el.hash.slice(1)).scrollIntoView({ behavior : 'smooth'});
     });
 });
 
@@ -101,45 +77,19 @@ document.querySelectorAll("#navbar-list a").forEach(el => {
 
 
 /**
- * progress bar
- * =======================
+ * swipper library for testimoials
  */
-
-const progressDiv = document.querySelector(".skills");
-const progressBars = document.querySelectorAll(".progress");
-const progressObserver = new IntersectionObserver((entries) => {
-
-    const [entry] = entries;
-    
-    Array.from(entry.target.querySelectorAll('.progress')).forEach(el => {
-        if (entry.isIntersecting) {
-            el.firstElementChild.style.width = el.getAttribute("aria-valuenow") + "%";
-        } else {
-            el.firstElementChild.style.width = 0;
-        }
-    })
-        
-});
-
-progressObserver.observe(progressDiv);
-
-
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
     loop: true,
-
-    // If we need pagination
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true
     },
-
     autoplay: {
         delay: 5000,
         disableOnInteraction: false
     },
-
     slidesPerView: 'auto',
 });
 

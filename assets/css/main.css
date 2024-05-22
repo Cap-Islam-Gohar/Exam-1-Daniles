@@ -281,29 +281,20 @@ ul{
 .progress {
     --bs-progress-bg: #f7f7f7;
     --bs-progress-height: auto;
-    /* height: auto;    */
     border-radius: 5px;
     box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset; 
     margin-bottom: 30px; 
-    transition: all 1s;
 }
 
 .progress-bar {
     font-size: 11px;
-    /* line-height: 1.1em; */
     background-color: #1c1c1c;
     justify-content: space-between;
     align-items: center;
-    width: 0;
     flex-direction: row;
     border-radius: 5px;
     padding: 5px 10px;
-    transition: all 1s;
 }
-
-/* .progress:hover .progress-bar {
-    width: 100%;
-} */
 
 
 .progress-bar h6 {
@@ -706,12 +697,17 @@ ul{
     font-size: 25px;
 }
 
+.info-card:hover .icon{
+    color: #eeeeee;
+    background-color: #1c1c1c;
+}
+
 .contact .info-card{ 
     margin-bottom: 30px;
     text-align: center;
 }
 
-.contact .info-title {
+.contact .info-title {  
     font-size: 16px;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
@@ -779,41 +775,7 @@ ul{
     word-spacing: 2px;
 }
 
-/* @auther: Islam Gohar */
-/* ============ typed css ================= */
 
-
-.typed-wrapper{
-    display: inline-block;
-    text-align: left;
-    overflow: hidden;
-    position: relative;
-    width: 0;
-    max-width: min-content;
-    vertical-align: top;
-    animation-name: typed;
-    animation-iteration-count: infinite;
-    padding-right: 10px;
-}
-
-.typed-text{
-    display: inline-block;
-    text-wrap: nowrap;
-    overflow: hidden;
-    white-space: nowrap;
-    vertical-align: top;
-    z-index: -1;
-}
-
-.typed-wrapper::after{
-    content: "";
-    position: absolute;
-    background-color: #aebcb9;
-    width: 2px;
-    height: 90%;
-    right: 0;
-    bottom: 10%;
-}
 
 
 @keyframes typed {

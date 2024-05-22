@@ -1,0 +1,35 @@
+/* @auther: Islam Gohar */
+/* ============ typed css ================= */
+
+
+.typed-wrapper{
+    display: inline-block;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    width: 0;
+    max-width: min-content;
+    vertical-align: top;
+    animation-name: typed;
+    animation-iteration-count: infinite;
+    padding-right: 10px;
+}
+
+.typed-text{
+    display: inline-block;
+    text-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: top;
+    z-index: -1;
+}
+
+.typed-wrapper::after{
+    content: "";
+    position: absolute;
+    background-color: #aebcb9;
+    width: 2px;
+    height: 90%;
+    right: 0;
+    bottom: 10%;
+}
