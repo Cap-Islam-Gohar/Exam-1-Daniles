@@ -27,7 +27,7 @@
     /**
      * filter 
      */
-    const portfolioFilter = Filter("#portfolio-filter")
+    const portfolioFilter = Filter("#portfolio-filter");
 
     /**
      * progress bar
