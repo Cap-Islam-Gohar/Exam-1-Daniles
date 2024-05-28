@@ -1,6 +1,32 @@
 
 (() => {
 
+    /**
+     * loader
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const loader = document.getElementById("loader");
+        loader.style.transition = "all 1s ease";
+
+        setTimeout(() => {
+            loader.children[0].style.height = "0";
+            loader.children[0].style.opacity = "0";
+            loader.children[1].style.height = "0";
+            loader.children[1].style.opacity = "0";
+            loader.style.opacity = "0";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+                loader.style.zIndex = -1;
+            }, 500);
+
+        }, 1000);
+    })
+
+    /**
+     * filter 
+     */
     const portfolioFilter = Filter("#portfolio-filter")
 
     /**
@@ -11,6 +37,16 @@
     const progress = new progressAnimation({
         selector: ".skills",
         duration: 1000,
+    }).run();
+
+
+    /**
+     *  Counter 
+     * ======================
+     */
+    const counter = new counterAnimaion({
+        selector: "#counter",
+        duration: 300,
     }).run();
 
     /** loop throw each section and detect if in Viewport */
@@ -101,6 +137,5 @@
             portfolioCarouselEl.querySelector(".current").innerHTML = this.querySelector(".active").dataset.index;
         });
     }) 
-
 
 })()
