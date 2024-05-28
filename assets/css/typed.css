@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* @auther: Islam Gohar */
 /* ============ typed css ================= */
 
@@ -8,10 +15,14 @@
     overflow: hidden;
     position: relative;
     width: 0;
+    max-width: -webkit-min-content;
+    max-width: -moz-min-content;
     max-width: min-content;
     vertical-align: top;
-    animation-name: typed;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: typed;
+            animation-name: typed;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
     padding-right: 10px;
 }
 
