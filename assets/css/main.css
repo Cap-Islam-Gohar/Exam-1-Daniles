@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @charset "utf-8";
 
 
@@ -69,11 +76,15 @@ ul{
  }
 
 #loader {
+    -webkit-transition: all 1.5s;
+    -o-transition: all 1.5s;
     transition: all 1.5s;
     background-color: #cccccc;
 }
 
 #loader .background-top{
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
     transition: all 1s;
     z-index: 1100;
     height: 50%;
@@ -81,6 +92,8 @@ ul{
 }
 
 #loader .background-bottom{
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
     transition: all 1s;
     z-index: 1100;
     height: 50%;
@@ -97,6 +110,8 @@ ul{
     background: transparent;
     color: #fff;
     padding: 40px 0 30px;
+    -webkit-transition: padding 0.5s;
+    -o-transition: padding 0.5s;
     transition: padding 0.5s;
 }
 
@@ -105,9 +120,14 @@ ul{
     background: #fff;
     height: 62px;
     max-height: 62px;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     padding: 20px 0 20px;
-    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
 }
 
@@ -144,7 +164,8 @@ ul{
 }
 
 .navbar-toggler:focus {
-    box-shadow: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
 }
 
 .navbar-collapse{
@@ -153,6 +174,8 @@ ul{
     right: 0;
     top: 155%;
     background-color: #fff;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
     font-size: 13px;
     text-align: center;
@@ -176,6 +199,8 @@ ul{
 
 .hero{
     height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0, 0,0.65)), to(rgba(0, 0, 0, 0.65))), url("../../imgs/bg.jpg");
+    background-image: -o-linear-gradient(top, rgba(0,0, 0,0.65), rgba(0, 0, 0, 0.65)), url("../../imgs/bg.jpg");
     background-image: linear-gradient(to bottom, rgba(0,0, 0,0.65), rgba(0, 0, 0, 0.65)), url("../../imgs/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -186,9 +211,15 @@ ul{
 
 .hero-content {
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     color: #fff;
     font-family: "Montserrat", sans-serif;
@@ -205,12 +236,18 @@ ul{
 
 .hero-list-icons {
     font-size: 0.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     line-height: 2.188rem;
     padding:0;
     margin: 1.875rem 0 0;
-    column-gap: 0.234rem;
+    -webkit-column-gap: 0.234rem;
+       -moz-column-gap: 0.234rem;
+            column-gap: 0.234rem;
 }
 
 .hero-list-icons li {
@@ -218,9 +255,15 @@ ul{
     height: 2.188rem;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.3);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .hero-subtitle {
@@ -326,16 +369,24 @@ ul{
     --bs-progress-bg: #f7f7f7;
     --bs-progress-height: auto;
     border-radius: 5px;
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset; 
+    -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+            box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset; 
     margin-bottom: 30px; 
 }
 
 .progress-bar {
     font-size: 11px;
     background-color: #1c1c1c;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     border-radius: 5px;
     padding: 5px 10px;
 }
@@ -354,6 +405,8 @@ ul{
     padding: 10px 30px;
     font-size: 13px;
     margin-top: 20px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
     line-height: 1.42857143;
 }
@@ -396,7 +449,8 @@ ul{
     --bs-card-bg: var(--bs-body-bg);
     padding: calc(var(--bs-card-spacer-y) * 3.125 ) calc(var(--bs-card-spacer-x) * 1.25 );
     text-align: center;
-    box-shadow: var(--bs-card-box-shadow);
+    -webkit-box-shadow: var(--bs-card-box-shadow);
+            box-shadow: var(--bs-card-box-shadow);
     border-radius: var(--bas-card-border-radius);
     margin-bottom: 29px;
     border: none;
@@ -409,6 +463,8 @@ ul{
     width: 70px;
     height: 70px;
     line-height: 70px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
     margin: 0 auto 20px;
 }
@@ -483,11 +539,15 @@ ul{
 } */
 
 .show-filter-card{
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
     transition: all 1s;
 }
 
 .hide-filter-card{
     width: 0; 
+    -webkit-transition: all 1s; 
+    -o-transition: all 1s; 
     transition: all 1s;
     opacity: 0;
     padding: 0;
@@ -506,11 +566,22 @@ ul{
     margin: 5px;
     background-color: rgba(255, 255, 255, 0.95);
     opacity: 0;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     z-index: -1;
 }
@@ -591,7 +662,10 @@ ul{
 }
 
 .carousel-item{
-    user-select:none;
+    -webkit-user-select:none;
+       -moz-user-select:none;
+        -ms-user-select:none;
+            user-select:none;
     cursor:default;
 }
 
@@ -608,6 +682,8 @@ ul{
     border-radius: 50%;
     background-color: #d6d6d6;
     opacity: 1;
+    -webkit-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
 }
 
@@ -676,40 +752,65 @@ ul{
 }
 
 .team .card-img {
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
     border-radius: var(--bs-border-radius);
 }
 
 .team .card:hover .card-img{
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
 }
 
 .team .card-img-overlay {
     margin: 5px;
     background-color: rgba(255, 255, 255, 0.95);
     opacity: 0;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: rotateY(180deg) scale(0.5);
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: rotateY(180deg) scale(0.5);
+            transform: rotateY(180deg) scale(0.5);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     z-index: -1;
 }
 
 .team .card:hover .card-img-overlay {
     opacity: 1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
-    transform: rotateY(360deg) scale(1);
+    -webkit-transform: rotateY(360deg) scale(1);
+            transform: rotateY(360deg) scale(1);
     z-index: 2;
 }
 
 .team .icons-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 14px;
     margin: 0;
     padding: 0;
@@ -810,7 +911,8 @@ ul{
 }
 
 .contact .form-control:focus{
-    box-shadow: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
     background-color: #f4f4f4;
 }
 
@@ -827,8 +929,11 @@ ul{
     color: #eeeeee;
     font-size: 13px;
     border-radius: 5px;
-    box-shadow: 0;
+    -webkit-box-shadow: 0;
+            box-shadow: 0;
     display: inline-block;    
+    -webkit-transition: all 0.5s;    
+    -o-transition: all 0.5s;    
     transition: all 0.5s;    
 }
 
@@ -848,6 +953,23 @@ ul{
     font-size: 13px;
     margin-bottom: 0;
     word-spacing: 2px;
+}
+
+
+
+
+@-webkit-keyframes typed {
+    
+    0% {
+        width: 0;
+    }
+    90% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
 }
 
 
@@ -902,9 +1024,14 @@ ul{
         background: #fff;
         height: 62px;
         max-height: 62px;
-        align-self: center;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
         padding: 26px 0 20px;
-        box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+        -webkit-box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+                box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
         transition: all 0.5s;
     }
 
@@ -918,7 +1045,9 @@ ul{
     
     .navbar-collapse {
         position: relative;
-        justify-content: end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: end;
         background-color: transparent;
         padding: 0 18px 0 0;
     }
@@ -963,6 +1092,8 @@ ul{
         height: 2px;
         width: 0;
         background-color: #fff;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
         transition: all 0.5s;
     }
 
