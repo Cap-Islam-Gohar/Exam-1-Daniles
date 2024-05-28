@@ -68,6 +68,24 @@ ul{
     opacity: 0.8 !important;
  }
 
+#loader {
+    transition: all 1.5s;
+    background-color: #cccccc;
+}
+
+#loader .background-top{
+    transition: all 1s;
+    z-index: 1100;
+    height: 50%;
+    
+}
+
+#loader .background-bottom{
+    transition: all 1s;
+    z-index: 1100;
+    height: 50%;
+}
+
 /* ********** Navbar ********** */
 
 .navbar {
