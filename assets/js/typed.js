@@ -18,14 +18,17 @@ const typed = {
         this.targetEl.classList.add("typed-wrapper")
         this.targetEl.style.animationDuration = `${this.time}ms`;
         
-        const el = document.createElement("span");
-        const cursor = document.createElement("span");
-        cursor.classList.add("typed-cursor")
-        el.classList.add("typed-text");
+        if (this.targetEl.querySelector(".typed-text") === null) {
+            
+            const el = document.createElement("span");
+            const cursor = document.createElement("span");
+            cursor.classList.add("typed-cursor")
+            el.classList.add("typed-text");
+            
+            this.targetEl.appendChild(el)
+            this.targetEl.appendChild(cursor)
+        }
         
-        this.targetEl.appendChild(el)
-        this.targetEl.appendChild(cursor)
-
         this.loop()
         
     },

@@ -44,3 +44,17 @@
     right: 0;
     bottom: 10%;
 }
+
+@keyframes typed {
+    
+    0% {
+        width: 0;
+    }
+    90% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
